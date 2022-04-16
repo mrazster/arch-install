@@ -20,7 +20,7 @@ makepkg -si
 #sudo systemctl enable --now auto-cpufreq
 
 
-yay -S xorg sddm plasma-meta firefox simplescreenrecorder papirus-icon-theme kdenlive materia-kde kate yakuake xdg-desktop-portal-kde xdg-desktop-portal konsole dolphin ark sddm latte-dock bitwarden timeshift deja-dup pamac-aur conky-lua conky-manager
+yay -S xorg sddm plasma-meta firefox simplescreenrecorder papirus-icon-theme kdenlive materia-kde kate-root yakuake xdg-desktop-portal-kde xdg-desktop-portal konsole dolphin-root ark latte-dock bitwarden timeshift deja-dup pamac-aur conky-lua conky-manager
 
 
 sudo systemctl enable sddm
