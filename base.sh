@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# In the script, change "adduser" to your username of choice and "userpass" to your passw of choice.
+
+
 ln -sf /usr/share/zoneinfo/Europe/Stockholm /etc/localtime
 hwclock --systohc
 sed -i '178s/.//' /etc/locale.gen
@@ -10,7 +13,7 @@ echo "arch" >> /etc/hostname
 echo "127.0.0.1 localhost" >> /etc/hosts
 echo "::1       localhost" >> /etc/hosts
 echo "127.0.1.1 arch.localdomain arch" >> /etc/hosts
-echo root:naughty | chpasswd
+echo root:userpass | chpasswd
 
 # You can add xorg to the installation packages, I usually add it at the DE or WM install script
 # You can remove the tlp package if you are installing on a desktop or vm
@@ -31,11 +34,11 @@ systemctl enable fstrim.timer
 systemctl enable firewalld
 systemctl enable acpid
 
-useradd -m mrazster
-echo mrazster:naughty | chpasswd
+useradd -m adduser
+echo adduser:userpass | chpasswd
 # usermod -aG libvirt mrazster
 
-echo "mrazster ALL=(ALL) ALL" >> /etc/sudoers.d/mrazster
+echo "adduser ALL=(ALL) ALL" >> /etc/sudoers.d/adduser
 
 
 printf "\e[1;32mDone! Type exit, umount -a and reboot.\e[0m"
