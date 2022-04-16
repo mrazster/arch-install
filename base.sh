@@ -33,7 +33,7 @@ systemctl enable acpid
 
 useradd -m mrazster
 echo mrazster:naughty | chpasswd
-usermod -aG libvirt mrazster
+# usermod -aG libvirt mrazster
 
 echo "mrazster ALL=(ALL) ALL" >> /etc/sudoers.d/mrazster
 
